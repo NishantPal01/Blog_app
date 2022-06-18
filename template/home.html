@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{%block title %} Welcome to iblog {%endblock%}
+
+{%block content %} 
+
+
+
+<div class="container-custom">
+
+    {% for cat in cats %}
+    
+
+    {{ cat.cate_title }}
+
+    {%endfor %}
+</div>
+    <div class="container">
+
+        {% for p in posts %}
+
+        <div class="row">
+
+            <div class="col s12 m8">
+
+                {{p.desc | truncatewords:60 | safe}}
+
+
+                <div class="container">
+                    <a href="/blog/{{p.url}}" class="btn">Read More</a>
+                </div>
+
+            </div>
+
+            <div class="col sm12 m4">
+                <img src="/media/{{p.image}}" class="responsive-img " style="margin-top: 50px;">
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+{%endblock%}

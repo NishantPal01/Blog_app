@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{%block title %} POST {%endblock%}
+
+{%block content%} 
+
+
+<div class="container-custom">
+
+    <div class="row">
+
+        <div class="col s12 12 l12">
+
+            <h3>{{posts.title}}</h3>
+
+            <p>{{posts.cat.cat_title}}</p>
+
+            <img src="/media/{{posts.image}}" class="responsive-img"/>
+
+            <br><br>
+
+            <p>
+                {{posts.desc | safe}}
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+{%endblock%}
